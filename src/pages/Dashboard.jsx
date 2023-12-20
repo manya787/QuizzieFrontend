@@ -62,13 +62,13 @@ const Dashboard = (CUId) => {
 
 
   const getExamNames = async () => {
-    const { data } = await axios.get(`http://localhost:5000/exam/${CUId.CUId}`);
+    const { data } = await axios.get(`https://quizzie-94qc.onrender.com/exam/${CUId.CUId}`);
     setExamNameStorage(data);
     setIsLoading(false);
   }
 
   const deleteExam = (id) => {
-    axios.delete(`http://localhost:5000/exam/${id}`).then((response) => {
+    axios.delete(`https://quizzie-94qc.onrender.com/exam/${id}`).then((response) => {
       console.log(response.status);
       console.log(response.data);
     });
@@ -89,7 +89,7 @@ const Dashboard = (CUId) => {
         examname: examName,
       };
       console.log(newExam)
-      axios.post("http://localhost:5000/exam/", newExam).then((response) => {
+      axios.post("https://quizzie-94qc.onrender.com/exam/", newExam).then((response) => {
         console.log(response.status);
         console.log(response.data);
       });
@@ -156,7 +156,7 @@ const Dashboard = (CUId) => {
                     key={name.examname}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row" onClick={() => { navigator.clipboard.writeText("http://localhost:5000/quiz/" + name._id) }}>
+                    <TableCell component="th" scope="row" onClick={() => { navigator.clipboard.writeText("https://quizzie-94qc.onrender.com/quiz/" + name._id) }}>
                       <span style={{ cursor: "pointer" }} onClick={() => { notify(); }}> {name.examname}  <span style={{ color: "#CC0000" }}>{"=>"}  Click for quiz link</span> </span>
                     </TableCell>
                     <TableCell align="right"><Link to={`/anlyze/${name._id}`}><Button><BarChart style={{ verticalAlign: "middle", padding: "5px" }} />Analyze</Button></Link></TableCell>

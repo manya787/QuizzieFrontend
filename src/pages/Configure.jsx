@@ -74,7 +74,7 @@ const Configure = () => {
   }, [])
 
   const getConfigureData = async () => {
-    await axios.get(`http://localhost:5000/exam/exam/` + id.id).then((response) => {
+    await axios.get(`https://quizzie-94qc.onrender.com/exam/exam/` + id.id).then((response) => {
       console.log(response.status);
       setMyStartDatas(response.data);
       setIsLoading(false);
@@ -88,7 +88,7 @@ const Configure = () => {
       time: examTime,
       passGrade: examGrade,
     };
-    axios.patch(`http://localhost:5000/exam/${id.id}`, exam).then((response) => {
+    axios.patch(`https://quizzie-94qc.onrender.com/exam/${id.id}`, exam).then((response) => {
       console.log(response.status);
       console.log(response.data);
       navigate("/dashboard");

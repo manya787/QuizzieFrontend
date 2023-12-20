@@ -27,13 +27,13 @@ const Result = () => {
   }, [setScore])
 
   const getExamNames = async () => {
-    const { data } = await axios.get(`http://localhost:5000/userexams/exam/${id.id}`);
+    const { data } = await axios.get(`https://quizzie-94qc.onrender.com/userexams/exam/${id.id}`);
     setScore(data);
     getPassGrade();
   }
 
   const getPassGrade = async () => {
-    await axios.get(`http://localhost:5000/exam/exam/${id.id}`).then((response) => {
+    await axios.get(`https://quizzie-94qc.onrender.com/exam/exam/${id.id}`).then((response) => {
       setPassGrade(response.data);
     });
     setIsLoading(false);

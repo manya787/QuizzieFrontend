@@ -83,7 +83,7 @@ const Question = ({
   }, [])
 
   const handleCreatorUser = async () => {
-    const { data } = await axios.get('http://localhost:5000/exam/exam/' + id.id)
+    const { data } = await axios.get('https://quizzie-94qc.onrender.com/exam/exam/' + id.id)
     setPass(data[0].creatorUserId == userId)
     setIsLoading(false)
   }
@@ -121,7 +121,7 @@ const Question = ({
         examId: id.id,
         grade: score,
       };
-      axios.patch(`http://localhost:5000/userexams/${exam_id}`, userExam).then((response) => {
+      axios.patch(`https://quizzie-94qc.onrender.com/userexams/${exam_id}`, userExam).then((response) => {
         console.log(response.status);
         console.log(response.data);
       });
@@ -140,7 +140,7 @@ const Question = ({
         }
       };
       console.log(userOptions)
-      axios.put("http://localhost:3000/userexams/" + exam_id, userOptions).then((response) => {
+      axios.put("https://quizzie-94qc.onrender.com/userexams/" + exam_id, userOptions).then((response) => {
         console.log(response.status);
         console.log(response.data);
       });

@@ -76,7 +76,7 @@ const ExamReview = () => {
     }, [])
 
     const getExamInfos = async () => {
-        const { data } = await axios.get(`http://localhost:5000/userexams/exam/${id.id}`);
+        const { data } = await axios.get(`https://quizzie-94qc.onrender.com/userexams/exam/${id.id}`);
         console.log(data)
         console.log(data[0].examReview[0].qAnswers)
         setExamQuestions(data);

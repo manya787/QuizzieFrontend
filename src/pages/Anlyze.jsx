@@ -61,41 +61,10 @@ const Anlyze = (CUId) => {
 
 
     const getExamInfos = async () => {
-        const { data } = await axios.get(`http://localhost:5000/userexams/exam/${id.id}`);
+        const { data } = await axios.get(`https://quizzie-94qc.onrender.com/userexams/exam/${id.id}`);
         setExamInfo(data);
         setStart(false);
     }
-
-
-    /*
-        const getExamNames = async () => {
-            const { data } = await axios.get(`http://localhost:5000/userexams/exam/${id.id}`);
-            for (let i = 0; i < data.length; i++) {
-                setDatas(data);
-            }
-        }
-    
-        const getExam = async () => {
-            const { data } = await axios.get(`http://localhost:5000/exam/exam/${id.id}`);
-            for (let i = 0; i < data.length; i++) {
-                setExamName(data);
-            }
-            console.log(data)
-        }
-    
-        const getUserName = async () => {
-            for (var i = 0; i <= datas.length - 1; i++) {
-                const { data } = await axios.get(`http://localhost:5000/users/` + datas[i]?.userId);
-                for (let k = 0; k < data.length; k++) {
-                    setNames(data)
-                }
-            }
-            setStart(false)
-        }
-        */
-
-
-    // onClick={getUserName}
     if (start) {
         return (
             <>

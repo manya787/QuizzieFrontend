@@ -138,7 +138,7 @@ useEffect(() => {
       password: pass,
     };
 
-    axios.post("http://localhost:5000/users/", registered).then((response) => {
+    axios.post("https://quizzie-94qc.onrender.com/users/", registered).then((response) => {
       console.log(response.status);
       console.log(response.data);
     });

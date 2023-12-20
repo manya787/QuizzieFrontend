@@ -102,7 +102,7 @@ const CreateQuiz = () => {
                 questionTitle: questionTitle,
             };
             console.log(newQuestion)
-            axios.post("http://localhost:5000/examquestions/", newQuestion).then((response) => {
+            axios.post("https://quizzie-94qc.onrender.com/examquestions/", newQuestion).then((response) => {
                 console.log(response.status);
                 const data = response.data._id;
                 handleOptions({ data, inputOption });
@@ -127,7 +127,7 @@ const CreateQuiz = () => {
                 }
             }
             console.log(option);
-            axios.put("http://localhost:5000/examquestions/" + data, option).then((response) => {
+            axios.put("https://quizzie-94qc.onrender.com/examquestions/" + data, option).then((response) => {
                 console.log(response.status);
                 console.log(response);
             });
@@ -162,13 +162,13 @@ const CreateQuiz = () => {
     }, [options, dummy, dumy]);
 
     const getExams = async () => {
-        const { data } = await axios.get('http://localhost:5000/examquestions/' + id.id);
+        const { data } = await axios.get('https://quizzie-94qc.onrender.com/examquestions/' + id.id);
         setExamDatas(data);
         console.log(data[0].options)
     }
 
     const deleteQuestion = (propId) => {
-        axios.delete('http://localhost:5000/examquestions/' + propId).then((response) => {
+        axios.delete('https://quizzie-94qc.onrender.com/examquestions/' + propId).then((response) => {
             console.log(response.status);
             console.log(response.data);
             setDummy(dummy + 1);
